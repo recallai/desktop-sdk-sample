@@ -6,5 +6,5 @@ This is a small sample application that shows a very simple usage of the Desktop
 
 1. `npm install`
 2. Edit `.env` to set your `RECALLAI_API_KEY` (and optionally your `RECALLAI_API_URL`).
-  * In a production application, instead of baking the API key into your application, you'd make a request to your server to create the SDK upload.
+   * In a production application, instead of baking the API key into your application, you'd make a request to your server to create the SDK upload.
 3. `npm start`

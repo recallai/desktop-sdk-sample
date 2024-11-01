@@ -1,0 +1,17 @@
+{
+  "name": "desktop-sdk-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --force-node-api-uncaught-exceptions-policy=true index.js"
+  },
+  "author": "Recall.ai",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@recallai/desktop-sdk": "*",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5"
+  }
+}

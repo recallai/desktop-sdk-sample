@@ -15,6 +15,8 @@ if (!API_URL) {
   process.exit();
 }
 
+console.log(`Starting application with ${API_KEY} -- ${API_URL}`);
+
 // In a typical application, this function would reside on your backend and be
 // called via an HTTP request, so as to not store your API key client-side.
 
@@ -41,6 +43,20 @@ RecallAiSdk.addEventListener("meeting-detected", async (evt) => {
     windowId: id,
     uploadToken: upload_token
   });
+});
+
+RecallAiSdk.addEventListener('recording-ended', async (evt) => {
+  const { window: { id: id } } = evt;
+  setTimeout(function () {
+    RecallAiSdk.uploadRecording({
+      windowId: id
+    });
+  }, 3000);
+});
+
+RecallAiSdk.addEventListener('upload-progress', async (evt) => {
+  const { progress } = evt;
+  console.log(`Uploading ${progress}%`);
 });
 
 RecallAiSdk.addEventListener("sdk-state-change", async (evt) => {
